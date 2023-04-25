@@ -1,5 +1,5 @@
 <script setup>
-import { Bar } from 'vue-chartjs'
+import '../src/components/api-data.vue'
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 </script>
