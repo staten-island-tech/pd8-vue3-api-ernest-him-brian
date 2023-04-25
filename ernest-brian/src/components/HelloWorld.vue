@@ -11,7 +11,7 @@ defineProps({
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
     <h2>
-      Our website is about Dog Bites in NYC. We have different graphs to portray information on what dog breeds and what genders bit people.
+      Our website is about Dog Bites in NYC. In this website we portray specific data on dogs that have bit people.
     </h2>
     <br>
     <h3>
