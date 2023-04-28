@@ -1,5 +1,5 @@
 <script>
-import BarChart from '../components/api-data.vue'
+import BarChart from '../components/chart-data.vue'
 export default {
   name: 'App',
   components: { BarChart }
@@ -12,4 +12,8 @@ export default {
   </div>
 </template>
 
-<style></style>
+<style scoped>
+.about {
+  max-width: 400px;
+}
+</style>

@@ -10,7 +10,7 @@ import ScissorsIcon from './icons/IconTooling.vue'
 <template>
   <WelcomeItem>
     <template #icon>
-      <GraphIcon />
+      <GraphIcon draggable="false" />
     </template>
     <template #heading>Graphs</template>
     Graphs that were used include: bar graphs, pie charts, and polar area charts.
@@ -18,7 +18,7 @@ import ScissorsIcon from './icons/IconTooling.vue'
 
   <WelcomeItem>
     <template #icon>
-      <DogIcon />
+      <DogIcon draggable="false" />
     </template>
     <template #heading>Dog Breed Data</template>
     In a bar graph we display the dog breeds that bit people.
@@ -26,7 +26,7 @@ import ScissorsIcon from './icons/IconTooling.vue'
 
   <WelcomeItem>
     <template #icon>
-      <GenderIcon  />
+      <GenderIcon draggable="false" />
     </template>
     <template #heading>Dog Gender Data</template>
     In a polar area chart we display the dog genders that bit people.
@@ -34,7 +34,7 @@ import ScissorsIcon from './icons/IconTooling.vue'
 
   <WelcomeItem>
     <template #icon>
-      <BoroughIcon />
+      <BoroughIcon draggable="false" />
     </template>
     <template #heading>Borough Data</template>
     In a bar graph we display the boroughs that the incidents occured in.
@@ -42,7 +42,7 @@ import ScissorsIcon from './icons/IconTooling.vue'
 
   <WelcomeItem>
     <template #icon>
-      <ScissorsIcon />
+      <ScissorsIcon draggable="false" />
     </template>
     <template #heading>Neuter Data</template>
     In a pie chart we display whether or not the dogs were neutered.
