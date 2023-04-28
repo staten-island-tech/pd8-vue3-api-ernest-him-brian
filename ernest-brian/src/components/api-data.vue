@@ -3,7 +3,6 @@
     <Bar v-if="loaded" :data="chartData" />
   </div>
 </template>
-
 <script>
 import { Bar } from 'vue-chartjs'
 import {
@@ -15,7 +14,6 @@ import {
   CategoryScale,
   LinearScale
 } from 'chart.js'
-
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
 export default {
@@ -29,7 +27,7 @@ export default {
     this.loaded = false
 
     try {
-      const dogBite = await fetch('https://data.cityofnewyork.us/resource/rsgh-akpg.json')
+      const { dogBite } = await fetch('https://data.cityofnewyork.us/resource/rsgh-akpg.json')
       this.chartdata = dogBite
 
       this.loaded = true
