@@ -9,10 +9,11 @@ import HelloWorld from './components/HelloWorld.vue'
 
     <div class="wrapper">
       <HelloWorld msg="Dog Bite Info" />
-
       <nav>
-        <RouterLink to="/">Dog Breed Bite Info</RouterLink>
-        <RouterLink to="/about">Dog Gender Bite Info</RouterLink>
+        <RouterLink to="/">Dog Breed Info</RouterLink>
+        <RouterLink to="/about">Dog Gender Info</RouterLink>
+        <RouterLink to="/Borough">Borough Info</RouterLink>
+        <RouterLink to="/Neuter">Neuter Info</RouterLink>
       </nav>
     </div>
   </header>
