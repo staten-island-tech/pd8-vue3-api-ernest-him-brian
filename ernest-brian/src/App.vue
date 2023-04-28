@@ -6,14 +6,15 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <img alt="Doggo Pic" class="logo" src="https://creazilla-store.fra1.digitaloceanspaces.com/emojis/43022/dog-face-emoji-clipart-md.png" width="250" height="250" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
+      <HelloWorld msg="Dog Bite Info" />
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/">Dog Breed Info</RouterLink>
+        <RouterLink to="/about">Dog Gender Info</RouterLink>
+        <RouterLink to="/Borough">Borough Info</RouterLink>
+        <RouterLink to="/Neuter">Neuter Info</RouterLink>
       </nav>
     </div>
   </header>
@@ -29,7 +30,8 @@ header {
 
 .logo {
   display: block;
-  margin: 0 auto 2rem;
+  margin-left: 10rem;
+
 }
 
 nav {
