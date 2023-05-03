@@ -1,13 +1,48 @@
 <script>
-import BarChart from '../components/chart-data.vue'
-export default {
-  name: 'App',
-  components: { BarChart }
+import { Bar } from 'vue-chartjs'
+async function CheckM() {
+  const response = await fetch('https://data.cityofnewyork.us/resource/rsgh-akpg.json')
+  const info = await response.json()
+  let male = 0
+  info.forEach((dog) => {
+    if (dog.gender.includes('M')) {
+      male++
+    }
+  })
+  console.log(male)
+  return male
 }
+async function CheckF() {
+  const response = await fetch('https://data.cityofnewyork.us/resource/rsgh-akpg.json')
+  const info = await response.json()
+  let female = 0
+  info.forEach((dog) => {
+    if (dog.gender.includes('F')) {
+      female++
+    }
+  })
+  console.log(female)
+  return female
+}
+async function CheckU() {
+  const response = await fetch('https://data.cityofnewyork.us/resource/rsgh-akpg.json')
+  const info = await response.json()
+  let unknown = 0
+  info.forEach((dog) => {
+    if (dog.gender.includes('U')) {
+      unknown++
+    }
+  })
+  console.log(unknown)
+  return unknown
+}
+CheckM()
+CheckF()
+CheckU()
 </script>
 <template>
   <div class="about">
-    <BarChart />
+    <Bar id="my-chart-id" :options="chartOptions" :data="chartData" />
     <h1>Test</h1>
   </div>
 </template>
