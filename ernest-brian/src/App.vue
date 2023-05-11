@@ -18,7 +18,7 @@ import HelloWorld from './components/HelloWorld.vue'
     <div class="wrapper">
       <HelloWorld msg="Dog Bite Info" />
       <nav>
-        <RouterLink to="/" draggable="false">Dog Breed Info</RouterLink>
+        <RouterLink to="/" draggable="false">Home</RouterLink>
         <RouterLink to="/Gender" draggable="false">Dog Gender Info</RouterLink>
         <RouterLink to="/Borough" draggable="false">Borough Info</RouterLink>
         <RouterLink to="/Neuter" draggable="false">Neuter Info</RouterLink>
