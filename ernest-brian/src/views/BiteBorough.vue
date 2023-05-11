@@ -1,16 +1,51 @@
-<template>
-    <div class="about">
-      <h1>This is an about page</h1>
-    </div>
-  </template>
-  
-  <style>
-  @media (min-width: 1024px) {
-    .about {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-    }
+<script>
+import { Chart } from 'chart.js'
+async function genderData() {
+  async function CheckM() {
+    const response = await fetch('https://data.cityofnewyork.us/resource/rsgh-akpg.json')
+    const info = await response.json()
+    let male = 0
+    info.forEach((dog) => {
+      if (dog.gender.includes('M')) {
+        male++
+      }
+    })
+    console.log(male)
+    return male
   }
-  </style>
-  
+  async function CheckF() {
+    const response = await fetch('https://data.cityofnewyork.us/resource/rsgh-akpg.json')
+    const info = await response.json()
+    let female = 0
+    info.forEach((dog) => {
+      if (dog.gender.includes('F')) {
+        female++
+      }
+    })
+    console.log(female)
+    return female
+  }
+  async function CheckU() {
+    const response = await fetch('https://data.cityofnewyork.us/resource/rsgh-akpg.json')
+    const info = await response.json()
+    let unknown = 0
+    info.forEach((dog) => {
+      if (dog.gender.includes('U')) {
+        unknown++
+      }
+    })
+    console.log(unknown)
+    return unknown
+  }
+  CheckM()
+  CheckF()
+  CheckU()
+}
+genderData()
+</script>
+<template>
+  <div class="chartBox">
+    <canvas id="myChart" width="400" height="400"></canvas>
+    <h1>borough</h1>
+  </div>
+</template>
