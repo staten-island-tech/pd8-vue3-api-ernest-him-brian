@@ -10,10 +10,17 @@ import HelloWorld from './components/HelloWorld.vue'
     <div class="wrapper">
       <HelloWorld msg="Dog Bite Info" />
       <nav>
+<<<<<<< Updated upstream
         <RouterLink to="/">Dog Breed Info</RouterLink>
         <RouterLink to="/about">Dog Gender Info</RouterLink>
         <RouterLink to="/Borough">Borough Info</RouterLink>
         <RouterLink to="/Neuter">Neuter Info</RouterLink>
+=======
+        <RouterLink to="/" draggable="false">Home</RouterLink>
+        <RouterLink to="/Gender" draggable="false">Dog Gender Info</RouterLink>
+        <RouterLink to="/Borough" draggable="false">Borough Info</RouterLink>
+        <RouterLink to="/Neuter" draggable="false">Neuter Info</RouterLink>
+>>>>>>> Stashed changes
       </nav>
     </div>
   </header>
