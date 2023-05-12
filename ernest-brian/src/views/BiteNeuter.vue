@@ -53,7 +53,7 @@ export default {
             {
               label: 'data',
               data: [data.ntrue, data.nfalse],
-              backgroundColor: ['rgba(0,50, 0, 1)', 'rgba(50, 0, 0, 1)'],
+              backgroundColor: ['rgba(0,100, 0, 1)', 'rgba(100, 0, 0, 1)'],
               borderColor: ['rgba(0, 0, 0, 1)']
             }
           ]
