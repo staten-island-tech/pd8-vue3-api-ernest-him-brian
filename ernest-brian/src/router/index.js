@@ -23,6 +23,11 @@ const router = createRouter({
       path: '/Neuter',
       name: 'Neuter',
       component: () => import('../views/BiteNeuter.vue')
+    },
+    {
+      path: '/Breed',
+      name: 'Breed',
+      component: () => import('../views/DogBreed.vue')
     }
   ]
 })

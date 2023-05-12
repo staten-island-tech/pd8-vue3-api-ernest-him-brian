@@ -57,7 +57,7 @@ export default {
           labels: ['Male', 'Female', 'Unknown'],
           datasets: [
             {
-              label: 'Data',
+              label: 'data',
               data: [data.males, data.females, data.unknown],
               backgroundColor: [
                 'rgba(0, 0, 255, 0.7)',

@@ -1,51 +1,73 @@
-<script>
-import { Chart } from 'chart.js'
-async function genderData() {
-  async function CheckM() {
-    const response = await fetch('https://data.cityofnewyork.us/resource/rsgh-akpg.json')
-    const info = await response.json()
-    let male = 0
-    info.forEach((dog) => {
-      if (dog.gender.includes('M')) {
-        male++
-      }
-    })
-    console.log(male)
-    return male
-  }
-  async function CheckF() {
-    const response = await fetch('https://data.cityofnewyork.us/resource/rsgh-akpg.json')
-    const info = await response.json()
-    let female = 0
-    info.forEach((dog) => {
-      if (dog.borough.includes('F')) {
-        female++
-      }
-    })
-    console.log(female)
-    return female
-  }
-  async function CheckU() {
-    const response = await fetch('https://data.cityofnewyork.us/resource/rsgh-akpg.json')
-    const info = await response.json()
-    let unknown = 0
-    info.forEach((dog) => {
-      if (dog.gender.includes('U')) {
-        unknown++
-      }
-    })
-    console.log(unknown)
-    return unknown
-  }
-  CheckM()
-  CheckF()
-  CheckU()
-}
-genderData()
-</script>
 <template>
-  <div class="chartBox">
-    <canvas id="myChart" width="400" height="400"></canvas>
-    <h1>neuter</h1>
+  <div class="page">
+    <h1>Bites by Neuter</h1>
+    <div class="chart">
+      <canvas id="myChart" width="200" height="200"></canvas>
+    </div>
   </div>
 </template>
+
+<style scoped>
+.page {
+  text-align: center;
+}
+.chart {
+  max-width: 700px;
+  max-height: 700px;
+}
+</style>
+
+<script>
+const APIURL = 'https://data.cityofnewyork.us/resource/rsgh-akpg.json'
+
+async function getData() {
+  const response = await fetch(APIURL)
+  const Info = await response.json()
+  let nfalse = 0
+  Info.forEach((dog) => {
+    if (dog.spayneuter === false) {
+      nfalse++
+    }
+  })
+  let ntrue = 0
+  Info.forEach((dog) => {
+    if (dog.spayneuter === true) {
+      ntrue++
+    }
+  })
+  return { nfalse, ntrue }
+}
+
+import Chart from 'chart.js/auto'
+
+export default {
+  mounted() {
+    getData().then((data) => {
+      console.log(data.males)
+      console.log(data.females)
+      const myChart = new Chart(document.getElementById('myChart'), {
+        type: 'doughnut',
+        data: {
+          labels: ['Neuter', 'Not Neuter'],
+          datasets: [
+            {
+              label: 'data',
+              data: [data.ntrue, data.nfalse],
+              backgroundColor: ['rgba(0,50, 0, 1)', 'rgba(50, 0, 0, 1)'],
+              borderColor: ['rgba(0, 0, 0, 1)']
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              position: 'right'
+            }
+          }
+        }
+      })
+    })
+  }
+}
+</script>

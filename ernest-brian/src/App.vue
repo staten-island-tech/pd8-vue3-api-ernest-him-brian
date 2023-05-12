@@ -22,6 +22,7 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/Gender" draggable="false">Dog Gender Info</RouterLink>
         <RouterLink to="/Borough" draggable="false">Borough Info</RouterLink>
         <RouterLink to="/Neuter" draggable="false">Neuter Info</RouterLink>
+        <RouterLink to="/Breed" draggable="false">Dog Breed Info</RouterLink>
       </nav>
     </div>
   </header>
